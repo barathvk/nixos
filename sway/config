@@ -31,10 +31,10 @@ exec_always {
 
 set $mode_shutdown "\
 <span> \
-  <span>(<b>l</b>)</span>lock \
-  <span>(<b>e</b>)</span>logout \
-  <span>(<b>r</b>)</span>reboot \
-  <span>(<b>s</b>)</span>shutdown \
+<span>(<b>l</b>)</span>lock \
+<span>(<b>e</b>)</span>logout \
+<span>(<b>r</b>)</span>reboot \
+<span>(<b>s</b>)</span>shutdown \
 </span>"
 
 mode --pango_markup $mode_shutdown {

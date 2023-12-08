@@ -53,10 +53,16 @@
     };
   };
   boot = {
+    kernelParams = [ "quiet" "splash" "udev.log_level=0" "loglevel=3" "systemd.show_status=auto" "rd.udev.log_level=3" ];
+    plymouth = {
+      enable = true;
+      theme = "breeze";
+    };
     loader = {
       systemd-boot = {
         enable = true;
       };
+      timeout = 0;
       efi = {
         canTouchEfiVariables = true;
       };
