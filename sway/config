@@ -1,0 +1,52 @@
+set $locking swaylock --screenshots --clock --datestr "" --indicator --effect-blur 7x5 --effect-vignette 0.5:0.5 --fade-in 0.2 --ring-color 555555 --ring-ver-color 222222 --inside-color 333333 --line-color 111111 --key-hl-color dddddd --font monospace --text-color ffffff --indicator-thickness 4 --indicator-radius 60 --line-uses-inside --inside-ver-color dddddd
+set $browser firefox
+
+floating_modifier Mod4 normal
+
+blur enable
+layer_effects "rofi" blur enable; shadows enable; corner_radius 6
+layer_effects "mako" blur enable; shadows enable; corner_radius 2
+corner_radius 2
+default_dim_inactive 0.2
+dim_inactive_colors.unfocused #000000FF
+dim_inactive_colors.urgent #000000FF
+shadows on
+shadow_blur_radius 70
+blur enable
+blur_xray enable
+blur_passes 2
+blur_radius 3
+
+default_border pixel 1
+titlebar_border_thickness 0
+client.focused #EEEEEE #444444 #EEEEEE #444444
+
+exec_always {
+  gsettings set $gnome_schema gtk-theme 'Qogir-Dark'
+  gsettings set $gnome_schema icon-theme 'Qogir-dark'
+  gsettings set $gnome-schema cursor-size 16
+  gsettings set $gnome_schema cursor-theme capitaine-cursors
+  gsettings set org.gtk.Settings.FileChooser show-hidden true
+}
+
+set $mode_shutdown "\
+<span> \
+  <span>(<b>l</b>)</span>lock \
+  <span>(<b>e</b>)</span>logout \
+  <span>(<b>r</b>)</span>reboot \
+  <span>(<b>s</b>)</span>shutdown \
+</span>"
+
+mode --pango_markup $mode_shutdown {
+  bindsym l mode "default", exec $locking
+  bindsym e exec swaymsg exit
+  bindsym s exec $purge_cliphist; exec systemctl poweroff
+  bindsym r exec $purge_cliphist; exec systemctl reboot
+  bindsym Escape mode "default"
+}
+
+assign [class="^(Microsoft Teams - Preview)$"] workspace number 7
+assign [class="^(Slack)$"] workspace number 7
+
+for_window [title="Welcome to IntelliJ IDEA"] floating enable
+for_window [app_id="float"] floating enable
