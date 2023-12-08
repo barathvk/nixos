@@ -23,7 +23,7 @@
             "${modifier}+m" = "exec io.elementary.files";
             "${modifier}+b" = "exec brightnessctl -d tpacpi::kbd_backlight set 2";
             "${modifier}+n" = "exec code ~/.config/nixos";
-            "${modifier}+Shift+u" = "exec alacritty --class float -o window.dimensions.lines=15 -o window.dimensions.columns=140 -e sudo nixos-rebuild switch --flake ~/.config/nixos/.#";
+            "${modifier}+Shift+u" = "exec alacritty --class float -o window.dimensions.lines=15 -o window.dimensions.columns=140 -e sudo nixos-rebuild switch --flake ~/.config/nixos/.# --impure";
             "${modifier}+d" = "exec rofi -show run";
             "${modifier}+1" = "output * scale 1.0";
             "${modifier}+2" = "output * scale 1.1";

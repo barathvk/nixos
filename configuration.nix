@@ -76,7 +76,7 @@
   };
   security = {
     sudo = {
-      wheelNeedsPassword = true;
+      wheelNeedsPassword = false;
     };
     polkit = {
       enable = true;
