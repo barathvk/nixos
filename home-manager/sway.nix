@@ -16,7 +16,7 @@
             "${modifier}+Shift+e" = "mode $mode_shutdown";
             "${modifier}+Shift+c" = "reload";
             "${modifier}+Shift+r" = "restart";
-            "${modifier}+l" = "exec $locaking";
+            "${modifier}+l" = "exec $locking";
             "${modifier}+h" = "splith";
             "${modifier}+v" = "splitv";
             "${modifier}+c" = "exec $browser";

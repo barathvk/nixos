@@ -16,6 +16,7 @@
       waybar
       kubectl
       kubernetes-helm
+      swaylock-effects
       azure-cli
       gh
       jq

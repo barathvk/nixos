@@ -84,6 +84,11 @@
     sudo = {
       wheelNeedsPassword = false;
     };
+    pam = {
+      services = {
+        swaylock = {};
+      };
+    };
     polkit = {
       enable = true;
     };
