@@ -20,6 +20,7 @@
       azure-cli
       gh
       jq
+      terraform
       devbox
       lens
       telepresence2
@@ -30,6 +31,7 @@
       xdg-desktop-portal-wlr
       avizo
       pulseaudio
+      corepack
       brightnessctl
       gnome.gnome-keyring
       grim
@@ -42,6 +44,10 @@
       (python3.withPackages(ps: with ps; [requests]))
       nodejs
       killall
+      jetbrains-toolbox
+      kubelogin-oidc
+      rustup
+      wlprop
     ];
   };
 }

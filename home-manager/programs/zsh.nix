@@ -32,6 +32,8 @@
           git commit -m "$1"
           git push origin -u $(git rev-parse --abbrev-ref HEAD)
         }
+        path+=("/home/barath/.local/bin")
+        export PATH
         unset -m POWERLEVEL9K_AZURE_SHOW_ON_COMMAND
         unset -m POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND
         typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
